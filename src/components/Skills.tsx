@@ -1,5 +1,27 @@
 import React, { useEffect, useRef } from 'react';
-import { Code, Layout, Terminal, Database, GitBranch, Figma, Cpu, Globe, Server, Wrench } from 'lucide-react';
+import { 
+  SiJavascript, 
+  SiTypescript, 
+  SiHtml5, 
+  SiCss3, 
+  SiPython,
+  SiReact,
+  SiRedux,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiVuedotjs,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiGit,
+  SiWebpack,
+  SiJest,
+  SiFigma,
+  SiGithubactions,
+} from 'react-icons/si';
+import { TbApi } from 'react-icons/tb';
+import { FaCode, FaServer, FaTools } from 'react-icons/fa';
 
 interface SkillItemProps {
   name: string;
@@ -89,27 +111,35 @@ const SkillCategory: React.FC<{ title: string; icon: React.ReactNode; skills: { 
 
 const Skills: React.FC = () => {
   const languageSkills = [
-    { name: 'JavaScript', level: 95, icon: <Code size={18} /> },
-    { name: 'TypeScript', level: 85, icon: <Code size={18} /> },
-    { name: 'HTML', level: 90, icon: <Code size={18} /> },
-    { name: 'CSS/SCSS', level: 88, icon: <Code size={18} /> },
-    { name: 'Python', level: 70, icon: <Code size={18} /> },
+    { name: 'JavaScript', level: 95, icon: <SiJavascript size={18} /> },
+    { name: 'TypeScript', level: 85, icon: <SiTypescript size={18} /> },
+    { name: 'HTML', level: 90, icon: <SiHtml5 size={18} /> },
+    { name: 'CSS/SCSS', level: 88, icon: <SiCss3 size={18} /> },
+    { name: 'Python', level: 70, icon: <SiPython size={18} /> },
   ];
 
   const frameworkSkills = [
-    { name: 'React', level: 90, icon: <Layout size={18} /> },
-    { name: 'Redux', level: 80, icon: <Layout size={18} /> },
-    { name: 'Tailwind CSS', level: 85, icon: <Layout size={18} /> },
-    { name: 'Next.js', level: 75, icon: <Layout size={18} /> },
-    { name: 'Vue.js', level: 65, icon: <Layout size={18} /> },
+    { name: 'React', level: 90, icon: <SiReact size={18} /> },
+    { name: 'Redux', level: 80, icon: <SiRedux size={18} /> },
+    { name: 'Tailwind CSS', level: 85, icon: <SiTailwindcss size={18} /> },
+    { name: 'Next.js', level: 75, icon: <SiNextdotjs size={18} /> },
+    { name: 'Vue.js', level: 65, icon: <SiVuedotjs size={18} /> },
+  ];
+
+  const backendSkills = [
+    { name: 'Node.js', level: 65, icon: <SiNodedotjs size={18} /> },
+    { name: 'Express.js', level: 60, icon: <SiExpress size={18} /> },
+    { name: 'MongoDB', level: 55, icon: <SiMongodb size={18} /> },
+    { name: 'REST APIs', level: 70, icon: <TbApi size={18} /> },
+    { name: 'PostgreSQL', level: 55, icon: <SiPostgresql size={18} /> },
   ];
 
   const toolsSkills = [
-    { name: 'Git', level: 85, icon: <GitBranch size={18} /> },
-    { name: 'Webpack/Vite', level: 80, icon: <Wrench size={18} /> },
-    { name: 'Jest/Testing Library', level: 70, icon: <Terminal size={18} /> },
-    { name: 'Figma/Adobe XD', level: 65, icon: <Figma size={18} /> },
-    { name: 'CI/CD', level: 70, icon: <Server size={18} /> },
+    { name: 'Git', level: 85, icon: <SiGit size={18} /> },
+    { name: 'Webpack/Vite', level: 80, icon: <SiWebpack size={18} /> },
+    { name: 'Jest/Testing Library', level: 70, icon: <SiJest size={18} /> },
+    { name: 'Figma/Adobe XD', level: 65, icon: <SiFigma size={18} /> },
+    { name: 'CI/CD', level: 70, icon: <SiGithubactions size={18} /> },
   ];
 
   return (
@@ -123,22 +153,28 @@ const Skills: React.FC = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <SkillCategory 
             title="Languages" 
-            icon={<Terminal size={24} />}
+            icon={<FaCode size={24} />}
             skills={languageSkills} 
           />
           
           <SkillCategory 
-            title="Frameworks & Libraries" 
-            icon={<Globe size={24} />}
+            title="Frontend Frameworks" 
+            icon={<SiReact size={24} />}
             skills={frameworkSkills} 
           />
           
           <SkillCategory 
+            title="Backend Development" 
+            icon={<FaServer size={24} />}
+            skills={backendSkills} 
+          />
+          
+          <SkillCategory 
             title="Tools & Workflow" 
-            icon={<Wrench size={24} />}
+            icon={<FaTools size={24} />}
             skills={toolsSkills} 
           />
         </div>
