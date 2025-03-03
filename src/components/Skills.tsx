@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { 
   SiJavascript, 
   SiTypescript, 
@@ -22,6 +22,8 @@ import {
 } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 import { FaCode, FaServer, FaTools } from 'react-icons/fa';
+import { ArrowRight } from 'lucide-react';
+import { Code, Sparkles} from 'lucide-react';
 
 interface SkillItemProps {
   name: string;
@@ -61,22 +63,33 @@ const SkillItem: React.FC<SkillItemProps> = ({ name, level, icon }) => {
   }, [level]);
   
   return (
-    <div className="mb-6">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center">
-          <div className="mr-3 text-indigo-600 dark:text-indigo-400">
-            {icon}
+    <div 
+      className="mb-6 group relative"
+    >
+      {/* Animated background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/10 dark:to-purple-900/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      
+      <div className="relative">
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center">
+            <div className="mr-3 text-indigo-600 dark:text-indigo-400 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+              {icon}
+            </div>
+            <span className="text-gray-700 dark:text-gray-300 font-medium group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+              {name}
+            </span>
           </div>
-          <span className="text-gray-700 dark:text-gray-300 font-medium">{name}</span>
+          <span className="text-gray-700 dark:text-gray-300 font-medium group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+            {level}%
+          </span>
         </div>
-        <span className="text-gray-700 dark:text-gray-300">{level}%</span>
-      </div>
-      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
-        <div 
-          ref={progressRef}
-          className="bg-indigo-600 dark:bg-indigo-400 h-2.5 rounded-full transition-all duration-1000 ease-out opacity-0"
-          style={{ width: '0%' }}
-        ></div>
+        <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden">
+          <div 
+            ref={progressRef}
+            className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 h-2.5 rounded-full transition-all duration-1000 ease-out opacity-0 group-hover:shadow-lg group-hover:shadow-indigo-500/50"
+            style={{ width: '0%' }}
+          ></div>
+        </div>
       </div>
     </div>
   );
@@ -87,23 +100,52 @@ const SkillCategory: React.FC<{ title: string; icon: React.ReactNode; skills: { 
   icon,
   skills 
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-      <div className="flex items-center mb-6">
-        <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-full text-indigo-600 dark:text-indigo-400 mr-3">
-          {icon}
-        </div>
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
-      </div>
-      <div>
-        {skills.map((skill) => (
-          <SkillItem 
-            key={skill.name} 
-            name={skill.name} 
-            level={skill.level} 
-            icon={skill.icon} 
+    <div 
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transform transition-all duration-500 hover:shadow-xl hover:-translate-y-1 relative overflow-hidden group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Animated border gradient */}
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="absolute inset-[1px] rounded-lg bg-white dark:bg-gray-800"></div>
+      
+      {/* Floating particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(5)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-indigo-400 dark:bg-indigo-500 rounded-full animate-particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
           />
         ))}
+      </div>
+      
+      <div className="relative">
+        <div className="flex items-center mb-6">
+          <div className="p-3 bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 rounded-full text-indigo-600 dark:text-indigo-400 mr-3 transform group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
+            {icon}
+          </div>
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:via-purple-600 group-hover:to-pink-600 transition-all duration-300">
+            {title}
+          </h3>
+        </div>
+        <div>
+          {skills.map((skill) => (
+            <SkillItem 
+              key={skill.name} 
+              name={skill.name} 
+              level={skill.level} 
+              icon={skill.icon} 
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -143,11 +185,55 @@ const Skills: React.FC = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="container mx-auto px-6">
+    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-300 dark:bg-indigo-700 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-20 animate-blob"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-300 dark:bg-purple-700 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-pink-300 dark:bg-pink-700 rounded-full mix-blend-multiply dark:mix-blend-overlay filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+      
+      {/* Floating stars */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(30)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 3}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Animated particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-indigo-400 dark:bg-indigo-500 rounded-full animate-particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="container mx-auto px-6 relative">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">My Skills</h2>
-          <div className="w-16 h-1 bg-indigo-600 dark:bg-indigo-400 mx-auto"></div>
+          <div className="inline-block mb-4 relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 rounded-full blur-xl opacity-50 animate-pulse"></div>
+            <Code className="w-8 h-8 text-indigo-600 dark:text-indigo-400 animate-spin-slow relative z-10" />
+            <Sparkles className="absolute -top-2 -right-2 w-4 h-4 text-indigo-400 animate-pulse z-10" />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            My Skills
+            <span className="text-indigo-600 dark:text-indigo-400 animate-pulse">.</span>
+          </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 mx-auto"></div>
           <p className="mt-4 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             Here are the technologies and tools I work with on a daily basis.
           </p>
@@ -185,16 +271,14 @@ const Skills: React.FC = () => {
           </p>
           <a 
             href="#projects" 
-            className="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-medium hover:underline"
+            className="inline-flex items-center text-indigo-600 dark:text-indigo-400 font-medium hover:underline group"
             onClick={(e) => {
               e.preventDefault();
               document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
             See My Projects
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clipRule="evenodd" />
-            </svg>
+            <ArrowRight className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300" size={20} />
           </a>
         </div>
       </div>
