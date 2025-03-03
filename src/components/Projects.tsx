@@ -30,8 +30,9 @@ const Projects: React.FC = () => {
       id: 2,
       title: "Portfolio Website Builder",
       description: "A dynamic portfolio website builder that allows developers to create and customize their professional portfolios with ease. Features theme customization, project showcasing, and real-time preview.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
-      tags: ["React", "Typescript", "TailwindCSS"],
+      // image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
+      image: "/images/portfolio-website.png",
+      tags: ["React", "TypeScript", "TailwindCSS"],
       liveUrl: "https://darkmoonportfolio.vercel.app/",
       githubUrl: "https://github.com/darkmoon810/darkmoon_portfolio"
     },
@@ -39,10 +40,11 @@ const Projects: React.FC = () => {
       id: 3,
       title: "Blog Platform",
       description: "A modern blog platform with markdown support, categories, search functionality, and a clean reading experience.",
-      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      tags: ["Next.js", "MongoDB", "TailwindCSS"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com"
+      // image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      image: "/images/blog-platform.png",
+      tags: ["Next.js", "TypeScript", "MongoDB", "TailwindCSS"],
+      liveUrl: "https://ten-blog.vercel.app/",
+      githubUrl: "https://github.com/darkmoon810/nextjs-blog"
     },
     {
       id: 4,
@@ -60,8 +62,8 @@ const Projects: React.FC = () => {
       description: "A modern chat application with real-time messaging, file sharing, and group chat capabilities. Features end-to-end encryption and message persistence.",
       image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       tags: ["React", "Node.js", "Socket.io"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com"
+      liveUrl: "https://dk-realtimechat.app",
+      githubUrl: "https://github.com/darkmoon810/Real-Time-Chat-Application"
     }
   ];
 
