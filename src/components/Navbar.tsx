@@ -8,10 +8,17 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const scrolled = window.scrollY > 10;
+      setIsScrolled(scrolled);
+
+      // Calculate scroll progress
+      const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled_progress = (window.scrollY / windowHeight) * 100;
+      setScrollProgress(scrolled_progress);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -36,21 +43,70 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md' : 'bg-transparent'}`}>
-      <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-          DevPortfolio
-        </a>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-lg' 
+        : 'bg-transparent'
+    }`}>
+      {/* Scroll Progress Bar */}
+      <div 
+        className="absolute bottom-0 left-0 h-0.5 bg-indigo-600 dark:bg-indigo-400 transition-all duration-300"
+        style={{ width: `${scrollProgress}%` }}
+      />
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+      <nav className="container mx-auto px-6 py-4">
+        <div className="flex justify-between items-center">
+          <a 
+            href="#" 
+            className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400"
+          >
+            DevPortfolio
+          </a>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-1">
+            {navLinks.map(link => (
+              <button
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className={`px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 relative group ${
+                  activeSection === link.id
+                    ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
+                }`}
+              >
+                {link.label}
+                <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-indigo-600 dark:bg-indigo-400 transform origin-left transition-transform duration-300 ${
+                  activeSection === link.id ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`} />
+              </button>
+            ))}
+          </div>
+
+          {/* Mobile Navigation Toggle */}
+          <button
+            className="md:hidden text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Navigation Menu */}
+      <div 
+        className={`md:hidden bg-white dark:bg-gray-900 shadow-lg transition-all duration-300 ${
+          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        } overflow-hidden`}
+      >
+        <div className="container mx-auto px-6 py-4 flex flex-col space-y-2">
           {navLinks.map(link => (
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className={`text-base font-medium transition-colors duration-300 ${
+              className={`px-4 py-2 rounded-lg text-base font-medium transition-all duration-300 ${
                 activeSection === link.id
-                  ? 'text-indigo-600 dark:text-indigo-400'
+                  ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30'
                   : 'text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
               }`}
             >
@@ -58,36 +114,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             </button>
           ))}
         </div>
-
-        {/* Mobile Navigation Toggle */}
-        <button
-          className="md:hidden text-gray-700 dark:text-gray-300"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </nav>
-
-      {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg">
-          <div className="container mx-auto px-6 py-4 flex flex-col space-y-4">
-            {navLinks.map(link => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className={`text-base font-medium transition-colors duration-300 ${
-                  activeSection === link.id
-                    ? 'text-indigo-600 dark:text-indigo-400'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400'
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+      </div>
     </header>
   );
 };

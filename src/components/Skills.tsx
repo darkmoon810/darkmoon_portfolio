@@ -113,8 +113,8 @@ const Skills: React.FC = () => {
   const languageSkills = [
     { name: 'JavaScript', level: 95, icon: <SiJavascript size={18} /> },
     { name: 'TypeScript', level: 85, icon: <SiTypescript size={18} /> },
-    { name: 'HTML', level: 90, icon: <SiHtml5 size={18} /> },
-    { name: 'CSS/SCSS', level: 88, icon: <SiCss3 size={18} /> },
+    { name: 'HTML', level: 99, icon: <SiHtml5 size={18} /> },
+    { name: 'CSS/SCSS', level: 98, icon: <SiCss3 size={18} /> },
     { name: 'Python', level: 70, icon: <SiPython size={18} /> },
   ];
 

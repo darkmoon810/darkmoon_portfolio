@@ -19,26 +19,28 @@ const Projects: React.FC = () => {
       id: 1,
       title: "E-Commerce Dashboard",
       description: "A comprehensive dashboard for e-commerce businesses with analytics, inventory management, and order processing.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      // image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      image: "/images/ecommerce-haru-fashion.png",
       tags: ["React", "TypeScript", "Redux"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com"
+      // liveUrl: "https://kachabazar-store-nine.vercel.app/",
+      liveUrl: "https://haru-fashion.vercel.app/",
+      githubUrl: "https://github.com/darkmoon810/haru-fashion"
     },
     {
       id: 2,
-      title: "Social Media App",
-      description: "A modern social media application with real-time messaging, post sharing, and user profiles.",
-      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
-      tags: ["React", "Firebase", "Tailwind"],
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com"
+      title: "Portfolio Website Builder",
+      description: "A dynamic portfolio website builder that allows developers to create and customize their professional portfolios with ease. Features theme customization, project showcasing, and real-time preview.",
+      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
+      tags: ["React", "Typescript", "TailwindCSS"],
+      liveUrl: "https://darkmoonportfolio.vercel.app/",
+      githubUrl: "https://github.com/darkmoon810/darkmoon_portfolio"
     },
     {
       id: 3,
-      title: "Weather Application",
-      description: "A weather forecast application with location detection, 7-day forecasts, and weather alerts.",
-      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      tags: ["JavaScript", "API", "CSS"],
+      title: "Blog Platform",
+      description: "A modern blog platform with markdown support, categories, search functionality, and a clean reading experience.",
+      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      tags: ["Next.js", "MongoDB", "TailwindCSS"],
       liveUrl: "https://example.com",
       githubUrl: "https://github.com"
     },
@@ -46,14 +48,24 @@ const Projects: React.FC = () => {
       id: 4,
       title: "Task Management System",
       description: "A productivity tool for managing tasks, projects, and team collaboration with drag-and-drop functionality.",
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
-      tags: ["React", "TypeScript", "Redux"],
+      // image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
+      image: "/images/task-management.png",
+      tags: ["React", "Javascript", "Redux"],
+      liveUrl: "https:/dk-task-management.com",
+      githubUrl: "https://github.com/darkmoon810/Task-Management-Dashboard"
+    },
+    {
+      id: 5,
+      title: "Real-time Chat Application",
+      description: "A modern chat application with real-time messaging, file sharing, and group chat capabilities. Features end-to-end encryption and message persistence.",
+      image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      tags: ["React", "Node.js", "Socket.io"],
       liveUrl: "https://example.com",
       githubUrl: "https://github.com"
     }
   ];
 
-  const filters = ['all', 'React', 'TypeScript', 'JavaScript', 'API', 'Tailwind', 'Redux', 'Firebase', 'CSS'];
+  const filters = ['all', 'React', 'TypeScript', 'JavaScript', 'Node.js', 'MongoDB', 'Redux', 'Next.js', 'TailwindCSS', 'Socket.io'];
   
   const filteredProjects = activeFilter === 'all' 
     ? projects 
