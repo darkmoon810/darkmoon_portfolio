@@ -113,7 +113,7 @@ const About: React.FC = () => {
               <div className="flex items-center gap-2 mb-4">
                 <Award className="w-6 h-6 text-yellow-400 animate-bounce" />
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  Frontend Developer with 4+ Years Experience
+                  Frontend Developer with 8+ Years Experience
                   <span className="text-indigo-600 dark:text-indigo-400">.</span>
                 </h3>
               </div>
