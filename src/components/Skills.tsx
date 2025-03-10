@@ -161,27 +161,27 @@ const Skills: React.FC = () => {
   ];
 
   const frameworkSkills = [
-    { name: 'React', level: 90, icon: <SiReact size={18} /> },
-    { name: 'Redux', level: 80, icon: <SiRedux size={18} /> },
-    { name: 'Tailwind CSS', level: 85, icon: <SiTailwindcss size={18} /> },
-    { name: 'Next.js', level: 75, icon: <SiNextdotjs size={18} /> },
-    { name: 'Vue.js', level: 65, icon: <SiVuedotjs size={18} /> },
+    { name: 'React', level: 99, icon: <SiReact size={18} /> },
+    { name: 'Redux', level: 98, icon: <SiRedux size={18} /> },
+    { name: 'Tailwind CSS', level: 98, icon: <SiTailwindcss size={18} /> },
+    { name: 'Next.js', level: 97, icon: <SiNextdotjs size={18} /> },
+    { name: 'Vue.js', level: 99, icon: <SiVuedotjs size={18} /> },
   ];
 
   const backendSkills = [
-    { name: 'Node.js', level: 65, icon: <SiNodedotjs size={18} /> },
-    { name: 'Express.js', level: 60, icon: <SiExpress size={18} /> },
-    { name: 'MongoDB', level: 55, icon: <SiMongodb size={18} /> },
-    { name: 'REST APIs', level: 70, icon: <TbApi size={18} /> },
-    { name: 'PostgreSQL', level: 55, icon: <SiPostgresql size={18} /> },
+    { name: 'Node.js', level: 84, icon: <SiNodedotjs size={18} /> },
+    { name: 'Express.js', level: 87, icon: <SiExpress size={18} /> },
+    { name: 'MongoDB', level: 85, icon: <SiMongodb size={18} /> },
+    { name: 'REST APIs', level: 80, icon: <TbApi size={18} /> },
+    { name: 'PostgreSQL', level: 85, icon: <SiPostgresql size={18} /> },
   ];
 
   const toolsSkills = [
-    { name: 'Git', level: 85, icon: <SiGit size={18} /> },
-    { name: 'Webpack/Vite', level: 80, icon: <SiWebpack size={18} /> },
-    { name: 'Jest/Testing Library', level: 70, icon: <SiJest size={18} /> },
-    { name: 'Figma/Adobe XD', level: 65, icon: <SiFigma size={18} /> },
-    { name: 'CI/CD', level: 70, icon: <SiGithubactions size={18} /> },
+    { name: 'Git', level: 96, icon: <SiGit size={18} /> },
+    { name: 'Webpack/Vite', level: 99, icon: <SiWebpack size={18} /> },
+    { name: 'Jest/Testing Library', level: 90, icon: <SiJest size={18} /> },
+    { name: 'Figma/Adobe XD', level: 97, icon: <SiFigma size={18} /> },
+    { name: 'CI/CD', level: 90, icon: <SiGithubactions size={18} /> },
   ];
 
   return (
