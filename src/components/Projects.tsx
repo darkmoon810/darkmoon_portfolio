@@ -67,39 +67,21 @@ const Projects: React.FC = () => {
     },
     {
       id: 6,
-      title: "AI Chatbot",
-      description: "CG Digital, a premier electronics e-commerce company, faced challenges in providing seamless service to its extensive customer base around the clock. The existing system posed difficulties for customers who encountered obstacles while attempting to register their products at their convenience. Furthermore, tracking the delivery status of their orders proved to be a cumbersome task.",
-      image: "/images/ai-chatbot.png",
-      tags: ["GPT-4", "API Integration", "Python", "Node.js", "React", "AI Chatbot", "Generative AI"],
-      liveUrl: "https://cgdigital.com.np/",
-      githubUrl: "#"
+      title: "Auto Media TweetTelegram",
+      description: "Make.com scenario where given a drive folder of media (images & videos), it will randomly grab one. GPT-Vision will analyze the media, then GPT-4 will create a tweet from a fine-tuned model. Dependent on if the media is an image or video, it will upload that media to X/Twitter and Telegram. The scenario was designed to randomly reschedule itself during day-time hours for the next day.",
+      image: "/images/Auto Media TweetTelegram  Make.com  ChatGPT.png",
+      tags: ["Telegram","ChatGPT","AI Builder","API","Automation","Make.com","Twitter/X","System Automation"],
+      liveUrl: "https://darkmoonportfolio.vercel.app",
+      githubUrl: "https://darkmoonportfolio.vercel.app"
     },
     {
       id: 7,
-      title: "AI Agent",
-      description: "A modern AI agent application do tasks and automate processes.",
-      image: "/images/ai-agent.png",
-      tags: ["GPT-4", "API Integration", "Python", "Node.js", "React", "AI Agent", "Zapier"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      id: 8,
-      title: "AI Automation",
-      description: "A modern AI automation application to automate tasks and processes.",
-      image: "/images/ai-automation.png",
-      tags: ["GPT-4", "API Integration", "Workflow", "Make.com", "Generative AI"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      id: 9,
-      title: "Bubble.io Glasshouse",
-      description: "A modern no-code Full stack ai solution for a glasshouse company.",
-      image: "/images/glasshouse.png",
-      tags: ["Bubble.io", "Full Stack", "AI", "No-Code"],
-      liveUrl: "https://glasshouse.bubble.io/",
-      githubUrl: "#"
+      title: "Auto Transaction Matcher",
+      description: "Make.com solution to automatically create a sheet from a bank statement, and given a folder of invoices, attach each invoice with AI to their specific transaction in the sheet.",
+      image: "/images/Auto Transaction Matcher  Make.com  OpenAI  Sheets.png",
+      tags: ["Make.com","Automation","Google Sheets","System Automation","ChatGPT","OpenAI API","AI Data Analytics"],
+      liveUrl: "https://darkmoonportfolio.vercel.app",
+      githubUrl: "https://darkmoonportfolio.vercel.app"
     }
   ];
 
