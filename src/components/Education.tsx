@@ -44,7 +44,7 @@ const Education: React.FC = () => {
               <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Key Courses</h4>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {['Web Development', 'Data Structures & Algorithms', 'Software Engineering', 'Database Systems', 'UI/UX Design', 'Mobile App Development'].map(course => (
+                  {['Web Development', 'Data Structures & Algorithms', 'Artificial Intelligence', 'Software Engineering', 'Database Systems', 'UI/UX Design', 'Mobile App Development'].map(course => (
                     <span 
                       key={course} 
                       className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 text-sm font-medium rounded-full"
@@ -60,13 +60,14 @@ const Education: React.FC = () => {
                   <li>Graduated with Honors in Computer Science</li>
                   <li>Winner of the Annual Hackathon (2019)</li>
                   <li>Teaching Assistant for Web Development courses</li>
+                  <li>Teaching Assistant for Artificial Intelligence courses</li>
                 </ul>
               </div>
             </div>
             
             <div className="bg-indigo-50 dark:bg-indigo-900/10 p-6">
               <p className="text-gray-700 dark:text-gray-300 italic">
-                "My time at Dakota State University provided me with a strong foundation in computer science principles and 
+                "My time at Dakota State University provided me with a strong foundation in computer science and artificial intelligence principles and 
                 practical experience that has been invaluable throughout my professional career."
               </p>
             </div>

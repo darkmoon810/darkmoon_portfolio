@@ -64,6 +64,42 @@ const Projects: React.FC = () => {
       tags: ["React", "Node.js", "Socket.io"],
       liveUrl: "https://dk-realtimechat.app",
       githubUrl: "https://github.com/darkmoon810/Real-Time-Chat-Application"
+    },
+    {
+      id: 6,
+      title: "AI Chatbot",
+      description: "CG Digital, a premier electronics e-commerce company, faced challenges in providing seamless service to its extensive customer base around the clock. The existing system posed difficulties for customers who encountered obstacles while attempting to register their products at their convenience. Furthermore, tracking the delivery status of their orders proved to be a cumbersome task.",
+      image: "/images/ai-chatbot.png",
+      tags: ["GPT-4", "API Integration", "Python", "Node.js", "React", "AI Chatbot", "Generative AI"],
+      liveUrl: "https://cgdigital.com.np/",
+      githubUrl: "#"
+    },
+    {
+      id: 7,
+      title: "AI Agent",
+      description: "A modern AI agent application do tasks and automate processes.",
+      image: "/images/ai-agent.png",
+      tags: ["GPT-4", "API Integration", "Python", "Node.js", "React", "AI Agent", "Zapier"],
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      id: 8,
+      title: "AI Automation",
+      description: "A modern AI automation application to automate tasks and processes.",
+      image: "/images/ai-automation.png",
+      tags: ["GPT-4", "API Integration", "Workflow", "Make.com", "Generative AI"],
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      id: 9,
+      title: "Bubble.io Glasshouse",
+      description: "A modern no-code Full stack ai solution for a glasshouse company.",
+      image: "/images/glasshouse.png",
+      tags: ["Bubble.io", "Full Stack", "AI", "No-Code"],
+      liveUrl: "https://glasshouse.bubble.io/",
+      githubUrl: "#"
     }
   ];
 

@@ -8,11 +8,13 @@ const TypewriterText: React.FC = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const titles = [
-    'Frontend Developer',
+    'Full Stack AI Developer',
     'React Specialist',
     'UI/UX Enthusiast',
-    'Web Developer',
-    'TypeScript Expert'
+    'AI Chatbot Developer',
+    'AI Agent Developer',
+    'AI Automation Developer',
+    'No-Code AI Solutions Developer',
   ];
 
   useEffect(() => {
@@ -115,7 +117,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mb-10 relative">
-            Crafting beautiful, responsive, and user-friendly web experiences with modern technologies.
+            Crafting beautiful, responsive, and user-friendly web experiences with modern technologies and implementing AI solutions to automate tasks and improve operations and chatbots.
             <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full"></div>
           </p>
 
